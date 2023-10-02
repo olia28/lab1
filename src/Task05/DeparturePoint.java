@@ -1,10 +1,13 @@
 package Task05;
 
-public class DeparturePoint {
+class DeparturePoint {
+    private final String name;
 
-    String address;
+    public DeparturePoint(String name) {
+        this.name = name;
+    }
 
-    public DeparturePoint(String address) {
-        this.address = address;
+    public String getName() {
+        return name;
     }
 }

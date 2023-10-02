@@ -2,18 +2,22 @@ package Task05;
 
 public class Main {
     public static void main(String[] args) {
+        Customer customer = new Customer("Jane Smith");
+        DeparturePoint departurePoint = new DeparturePoint("45 Main St. Nashville, USA");
+        ReceivePoint receivePoint = new ReceivePoint("18 Green St. Kansas City, USA");
 
-        Item item = new Item("Product", 5.0, 16.5);
-        DeparturePoint departurePoint = new DeparturePoint("Departure Address");
-        ReceivePoint receivePoint = new ReceivePoint("Receive Address");
-        Shipment shipment = new Shipment(item, departurePoint, receivePoint);
+        Item item1 = new Item("Phone", 0.5, 10.0);
+        Item item2 = new Item("Hardcover book", 1.5, 16.0);
 
-        Customer customer = new Customer("Maria Smith", "Customer`s Address");
+        ShipmentMethods methods = new ShipmentMethods();
+        Shipment shipment1 = methods.createShipment(customer, departurePoint, receivePoint, item1, item2);
 
-        System.out.println("Shipment details:");
-        System.out.println("Item: " + shipment.item.name);
-        System.out.println("Departure Point: " + shipment.departurePoint.address);
-        System.out.println("Receive Point: " + shipment.receivePoint.address);
-        System.out.println("Customer: " + customer.name);
+        System.out.println("Shipment details before cancellation:");
+        methods.printShipmentDetails(shipment1);
+
+        methods.cancelShipment(shipment1);
+
+        System.out.println("Shipment details after cancellation:");
+        methods.printShipmentDetails(shipment1);
     }
 }

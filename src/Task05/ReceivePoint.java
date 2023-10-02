@@ -1,9 +1,13 @@
 package Task05;
 
-public class ReceivePoint {
-    String address;
+class ReceivePoint {
+    private final String name;
 
-    public ReceivePoint(String address) {
-        this.address = address;
+    public ReceivePoint(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 }

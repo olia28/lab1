@@ -1,11 +1,13 @@
 package Task05;
 
-public class Customer {
-    String name;
-    String address;
+class Customer {
+    private final String name;
 
-    public Customer(String name, String address) {
+    public Customer(String name) {
         this.name = name;
-        this.address = address;
+    }
+
+    public String getName() {
+        return name;
     }
 }
